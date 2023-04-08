@@ -15,6 +15,7 @@ body {
     color: #F4EEE0;
     height: 100vh;
     position: relative;
+    overflow: hidden;
 }
 
 #nav-bar {
@@ -33,10 +34,6 @@ body {
     width: 150px;
     height: 50px;
     object-fit: cover;
-}
-
-.mobile-logo{
-    display: none;
 }
 
 .nav-links li {
@@ -71,13 +68,12 @@ body {
 }
 
 .nav-button:hover{
-    background-color: #18181b;
+    background-color: #e5e0ff;
     color: #7286D3;
-    transition: 0.4s;
-}
+    transition: 0.3s ease-in-out;}
 
 .nav-links.active {
-    display: flex;
+    right: 0;
 }
 
 .hamburger.remove {
@@ -89,9 +85,9 @@ body {
 }
 
 @media screen and (max-width:900px) {
-    .nav-links {
+    /* .nav-links {
         display: none;
-    }
+    } */
 
     #nav-bar .right:not(.nav-links .right) {
         display: none;
@@ -110,8 +106,8 @@ body {
     .nav-links {
         flex-direction: column;
         position: absolute;
-        right: 0;
-        top: 70px;
+        right: -250px;
+        top: 74px;
         bottom: 0;
         background-color: #e5e0ff;
         padding: 30px 50px;
@@ -137,16 +133,6 @@ body {
         background-color: #7286D3;
         color: #FFF2F2;
     }
-
-    .default-logo{
-        display: none;
-    }
-
-    .mobile-logo{
-        display: flex;
-        width: 50px;
-        height: auto;
-    }
 }
 
 @media screen and (max-width:400px) {
@@ -154,5 +140,6 @@ body {
         width: 100%;
         align-items: center;
         padding: 90px 0px;
+        right: -350px;
     }
 }
