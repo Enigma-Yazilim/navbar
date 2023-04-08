@@ -7,6 +7,10 @@
     list-style: none;
 }
 
+button, span{
+    cursor: pointer;
+}
+
 body {
     color: #F4EEE0;
     height: 100vh;
@@ -14,7 +18,7 @@ body {
 }
 
 #nav-bar {
-    background-color: #393646;
+    background-color: #7286D3;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -25,9 +29,14 @@ body {
     display: flex;
 }
 
-.logo p {
-    font-size: 25px;
-    font-weight: 1000;
+.default-logo{
+    width: 150px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.mobile-logo{
+    display: none;
 }
 
 .nav-links li {
@@ -35,7 +44,7 @@ body {
 }
 
 .nav-links li a {
-    color: #F4EEE0;
+    color: #FFF2F2;
 }
 
 .hamburger {
@@ -54,11 +63,17 @@ body {
     font-size: 20px;
     font-weight: 1000;
     border: none;
-    background-color: #F4EEE0;
-    color: #393646;
+    background-color: #FFF2F2;
+    color: #7286D3;
     padding: 10px 30px;
     border-radius: 12px;
     cursor: pointer;
+}
+
+.nav-button:hover{
+    background-color: #18181b;
+    color: #7286D3;
+    transition: 0.4s;
 }
 
 .nav-links.active {
@@ -96,9 +111,9 @@ body {
         flex-direction: column;
         position: absolute;
         right: 0;
-        top: 55px;
+        top: 70px;
         bottom: 0;
-        background-color: #b6aeb7;
+        background-color: #e5e0ff;
         padding: 30px 50px;
         transition: 0.6s;
         align-items: center;
@@ -119,8 +134,18 @@ body {
     }
 
     .nav-links .right button{
-        background-color: #393646;
-        color: #F4EEE0;
+        background-color: #7286D3;
+        color: #FFF2F2;
+    }
+
+    .default-logo{
+        display: none;
+    }
+
+    .mobile-logo{
+        display: flex;
+        width: 50px;
+        height: auto;
     }
 }
 
