@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,11 +7,13 @@
     list-style: none;
 }
 
-body{
+body {
     color: #F4EEE0;
+    height: 100vh;
+    position: relative;
 }
 
-#nav-bar{
+#nav-bar {
     background-color: #393646;
     display: flex;
     align-items: center;
@@ -19,28 +21,36 @@ body{
     padding: 10px 15px;
 }
 
-.nav-links{
+.nav-links {
     display: flex;
 }
 
-.logo p{
+.logo p {
     font-size: 25px;
     font-weight: 1000;
 }
 
-.nav-links li{
+.nav-links li {
     padding: 0px 10px;
 }
 
-.nav-links li a{
+.nav-links li a {
     color: #F4EEE0;
 }
 
-.hamburger{
+.hamburger {
     display: none;
 }
 
-.nav-button{
+.hamburger.close {
+    display: none;
+}
+
+.hamburger.active {
+    display: flex;
+}
+
+.nav-button {
     font-size: 20px;
     font-weight: 1000;
     border: none;
@@ -51,22 +61,73 @@ body{
     cursor: pointer;
 }
 
-@media screen and (max-width:900px){
-    .nav-links{
+.nav-links.active {
+    display: flex;
+}
+
+.hamburger.remove {
+    display: none;
+}
+
+.nav-links .right{
+    display: none;
+}
+
+@media screen and (max-width:900px) {
+    .nav-links {
         display: none;
     }
 
-    #nav-bar .right{
+    #nav-bar .right:not(.nav-links .right) {
         display: none;
     }
 
-    .hamburger{
+    .hamburger {
         display: flex;
         color: #F4EEE0;
         cursor: pointer;
     }
 
-    .hamburger span{
+    .hamburger span {
         font-size: 25px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        top: 55px;
+        bottom: 0;
+        background-color: #b6aeb7;
+        padding: 30px 50px;
+        transition: 0.6s;
+        align-items: center;
+    }
+
+    .nav-links li a {
+        color: #18181b;
+        font-size: 18px;
+    }
+
+    .nav-links li {
+        padding: 20px;
+    }
+
+    .nav-links .right{
+        display: flex;
+        margin: 50px 0px;
+    }
+
+    .nav-links .right button{
+        background-color: #393646;
+        color: #F4EEE0;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .nav-links {
+        width: 100%;
+        align-items: center;
+        padding: 90px 0px;
     }
 }
