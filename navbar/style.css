@@ -215,5 +215,6 @@ body {
         align-items: center;
         padding: 90px 0px;
         display: flex;
+        right: -400px;
     }
 }
